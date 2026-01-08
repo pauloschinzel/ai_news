@@ -83,9 +83,9 @@ function App() {
               {/* Video Section */}
               {activeModel.video && (
                 <div className="rounded-xl overflow-hidden border border-neutral-800 shadow-2xl bg-black">
-                  <video 
-                    src={activeModel.video} 
-                    controls 
+                  <video
+                    src={`${import.meta.env.BASE_URL}${activeModel.video.slice(1)}`}
+                    controls
                     className="w-full h-auto aspect-video"
                   />
                 </div>
@@ -96,8 +96,8 @@ function App() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {activeModel.images.map((img, idx) => (
                     <div key={idx} className="rounded-xl overflow-hidden border border-neutral-800 shadow-xl bg-black/50">
-                      <img 
-                        src={img} 
+                      <img
+                        src={`${import.meta.env.BASE_URL}${img.slice(1)}`}
                         alt={`${activeModel.title} screenshot ${idx + 1}`}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
